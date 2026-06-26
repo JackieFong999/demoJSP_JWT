@@ -2,7 +2,7 @@
 <!-- Fixed Header -->
 <div class="fixed-header">
     <div class="header-content">
-        <h1>Welcome to Product Management System - (25/06/2027) - JSP + JWT</h1>
+        <h1>Welcome to Product Management System - (26/06/2027) - JSP + JWT</h1>
         <p>Your complete solution for product and user management</p>
     </div>
 </div>
