@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.15-SNAPSHOT</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.ocean</groupId>
+	<artifactId>demoJSP_JWT</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>demoJSP_JWT</name>
+	<description>Spring Boot JSP Project with JWT Authentication</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	
+		<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			
+			<!-- 18/05/2026 -->
+			<exclusions>            
+	            <!-- Exclude ALL logging frameworks -->
+	            <exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-log4j2</artifactId>
+				</exclusion>
+        	</exclusions>
+        	
+		</dependency>
+
+
+		<!-- 18/05/2026 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+
+		<!-- Add PostgreSQL driver -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.7.3</version>
+		</dependency>
+
+		<!-- 18/05/2026 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
+			<!-- <optional>true</optional> -->
+		</dependency>
+		
+		<!-- 18/05/2026 -->
+		<!-- Jakarta Persistence API (required for Spring Boot 3.x / Jakarta EE) -->
+		<dependency>
+		    <groupId>jakarta.persistence</groupId>
+		    <artifactId>jakarta.persistence-api</artifactId>
+		    <version>3.1.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		<!-- 19/08/2026 : For JSP -->
+		<!-- JSP Support (provided by JBoss EAP) -->
+		<dependency>
+		    <groupId>jakarta.servlet.jsp</groupId>
+		    <artifactId>jakarta.servlet.jsp-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- JSTL for JSP -->
+		<dependency>
+		    <groupId>jakarta.servlet.jsp.jstl</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+		<!-- For JSP -->
+		<dependency>
+		    <groupId>org.glassfish.web</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		    <version>3.0.1</version>
+		</dependency>
+		
+		
+		<!-- 19/05/2026-->
+		<!-- jQuery -->
+	    <dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>jquery</artifactId>
+	        <version>3.7.1</version>
+	    </dependency>
+	
+	    <!-- jQuery UI -->
+	    <dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>jquery-ui</artifactId>
+	        <version>1.13.2</version>
+	    </dependency>
+	
+    	<!-- Free jqGrid (open source fork) -->
+		<dependency>
+		    <groupId>org.webjars.bowergithub.free-jqgrid</groupId>
+		    <artifactId>jqgrid</artifactId>
+		    <version>4.15.5</version>
+		</dependency>
+		
+		
+		<!-- 19/05/2026 -->
+		<!-- AG Grid Dependencies -->
+		<dependency>
+		    <groupId>org.webjars.npm</groupId>
+		    <artifactId>ag-grid-community</artifactId>
+		    <version>33.2.1</version>
+		</dependency>
+		
+		
+		<!-- 20/05/2026 -->
+		<!-- BCrypt for password encoding -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-crypto</artifactId>
+		    <version>6.1.5</version>
+		</dependency>
+		
+		
+			
+		<!-- 25/06/2026 : JWT (JSON Web Token) Dependencies -->
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt-api</artifactId>
+		    <version>0.11.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt-impl</artifactId>
+		    <version>0.11.5</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt-jackson</artifactId>
+		    <version>0.11.5</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+	</dependencies>
+	
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>
